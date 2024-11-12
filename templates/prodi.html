@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% block title %}Prodi{% endblock %}
+{% block content %}
+<h1>Prodi</h1>
+Ini halaman Prodi
+<div class="m-4 border">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nama Prodi</th>
+                <th>Fakultas</th>
+                <th>UK</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prodi in dataProdi %}
+            <tr>
+                <td>{{ prodi.nama }}</td>
+                <td>{{ prodi.fakultas }}</td>
+                <td>{% if prodi.fakultas == "FIKR" %}
+                    8.000.000
+                    {% else %}
+                    6.000.000
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
